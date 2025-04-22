@@ -6,10 +6,6 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
 
-
-
-
-
 interface Project {
   id: string;
   projectName: string;
@@ -29,31 +25,9 @@ export default function DashboardView() {
     return (
         <>
         <div className="flex justify-between items-center mb-5">
-            <div>
-                <h1 className="text-4xl font-black">Mi Workspace</h1>
-                <p className="text-lg font-light text-gray-500 mt-1">Maneja y administra tus proyectos</p>
-            </div>
             <div className="flex items-center gap-3">
-                <Link 
-                    to="/proyects/invite"
-                    className="bg-gray-100 hover:bg-gray-200 px-5 py-2 text-gray-700 font-medium rounded-md transition-colors flex items-center"
-                >
-                    Invite Member
-                </Link>
-                <Link 
-                    to="/proyects/create"
-                    className="bg-blue-500 hover:bg-blue-600 px-5 py-2 text-white font-medium rounded-md transition-colors flex items-center"
-                >
-                    New Project
-                </Link>
             </div>
-        </div>
-
-        <div className="my-5 border-b border-gray-200 pb-2">
-            <h2 className="text-xl font-semibold">All</h2>
-            <div className="text-sm text-gray-500 flex items-center">
-                Last viewed by me <span className="ml-1">▼</span>
-            </div>
+           
         </div>
 
         {data && data.length ? (
@@ -62,7 +36,7 @@ export default function DashboardView() {
                     <div key={project.id} className="relative group">
                         <Link to={`/projects/${project.id}`}>
                             <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
-                                {/* Imagen o fondo con patrón */}
+                        
                                 <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                                     <div className="pattern-diagonal-stripes pattern-gray-300 pattern-bg-white pattern-size-2 pattern-opacity-20 w-full h-full">
                                         <div className="flex flex-col items-center justify-center h-full p-5 text-center">

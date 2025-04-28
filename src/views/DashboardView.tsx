@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query"
-import { getProjects } from "@/api/ProjectApi";
+
 
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
@@ -16,7 +16,7 @@ interface Project {
 export default function DashboardView() {
     const { data, isLoading } = useQuery<Project[]>({
         queryKey: ["projects"],
-        queryFn: getProjects,
+    
     })
 
     if (isLoading) return <div>Cargando...</div>
